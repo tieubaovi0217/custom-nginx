@@ -1,6 +1,5 @@
-FROM nginx
-COPY proxy.conf /etc/nginx/
-COPY nginx.conf /etc/nginx/nginx.conf
+FROM nginx:alpine
 RUN mkdir -p /var/www/EditorPage
 COPY EditorPage/ /var/www/EditorPage
+COPY proxy.conf nginx.conf /etc/nginx/
 EXPOSE 8080
